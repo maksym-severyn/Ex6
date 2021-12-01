@@ -1,29 +1,26 @@
 package com.infoshareacademy.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.infoshareacademy.repository.Books;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
 
-@RestController
-@RequestMapping("api")
+@Controller
 public class Bookcase {
 
     private final Books books;
 
-    private final ObjectMapper objectMapper;
-
     @Autowired
-    public Bookcase(Books books, ObjectMapper objectMapper) {
+    public Bookcase(Books books) {
         this.books = books;
-        this.objectMapper = objectMapper;
     }
 
     @GetMapping("books")
-    public Books displayBooks() {
-        return books;
+    public ModelAndView displayBooks() {
+        ModelAndView modelAndView = new ModelAndView("books");
+        modelAndView.addObject("allBooks", books.getBooks());
+        return modelAndView;
     }
 
 }

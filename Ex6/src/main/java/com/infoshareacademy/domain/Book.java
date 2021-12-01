@@ -36,6 +36,10 @@ public class Book {
         return forKids;
     }
 
+    public String isForKidsInWords() {
+        return (isForKids()) ? "Tak" : "Nie";
+    }
+
     @Override
     public String toString() {
         return "{" + author + ", " + title + " (" + pages + "str.)}";
