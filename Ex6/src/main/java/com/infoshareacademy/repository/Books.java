@@ -2,7 +2,6 @@ package com.infoshareacademy.repository;
 
 import com.infoshareacademy.domain.Book;
 import com.infoshareacademy.domain.Category;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;

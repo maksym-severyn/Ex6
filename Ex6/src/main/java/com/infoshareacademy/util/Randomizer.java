@@ -13,7 +13,7 @@ public class Randomizer {
         this.random = new Random(System.currentTimeMillis());
     }
 
-    private int getRandomNumberBetween(int min, int max) {
+    public int getRandomNumberBetween(int min, int max) {
         return random.nextInt((max - min) + 1) + min;
     }
 

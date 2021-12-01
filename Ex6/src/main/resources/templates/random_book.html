@@ -5,25 +5,20 @@
     <title>Books</title>
 </head>
 <body>
-<th:block th:if="${#lists.isEmpty(allBooks)}">Lista książek jest pusta</th:block>
-<h1>Liczba książek: <th:block th:text="${#lists.size(allBooks)}">100</th:block></h1>
-<table>
-    <tr>
-        <th>Numer</th>
-        <th>Autor</th>
-        <th>Tytuł</th>
-        <th>Kategoria</th>
-        <th>Liczba stron</th>
-        <th>Czy książka przyjazna dzieciom</th>
-    </tr>
-    <tr th:each="book, stat : ${allBooks}">
-        <td th:text="${stat.index + 1}"></td>
-        <td th:text="${book.author}"></td>
-        <td th:text="${book.title}"></td>
-        <td th:text="${book.category}"></td>
-        <td th:text="${book.pages}"></td>
-        <td th:text="${book.isForKidsInWords()}"></td>
-    </tr>
-</table>
+<h1>Książka na dziś:
+    <th:block th:text="${selected_random_book.title}">100</th:block>
+</h1>
+<p>Autor:
+    <th:block th:text="${selected_random_book.author}"></th:block>
+</p>
+<p>Kategoria:
+    <th:block th:text="${selected_random_book.category}"></th:block>
+</p>
+<p>Liczba stron:
+    <th:block th:text="${selected_random_book.pages}"></th:block>
+</p>
+<p>Czy przyjazna dzieciom:
+    <th:block th:text="${selected_random_book.isForKidsInWords()}"></th:block>
+</p>
 </body>
 </html>
