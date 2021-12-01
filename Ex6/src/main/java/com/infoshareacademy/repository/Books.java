@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.stream.Collectors;
 
 @Repository
 public class Books {
@@ -36,5 +38,9 @@ public class Books {
         books.add(new Book("Elizabeth Gilbert", "Jedz, modl sie, kochaj", Category.PUBLICYSTYKA_BIOGRAFIA, 490, false));
 
         return books;
+    }
+
+    public List<Book> findBooksByTitle(String searchingTitle){
+        return books.stream().filter(book -> book.getTitle().toLowerCase(Locale.ROOT).contains(searchingTitle.toLowerCase(Locale.ROOT))).collect(Collectors.toList());
     }
 }
