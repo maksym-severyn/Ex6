@@ -3,13 +3,23 @@
 
 ### Zadanie "Domowa biblioteczka" :books:
 
-1. Otwórz projekt `Ex6` w IntelliJ IDEA.
-2. Oznacz projekt jako Mavenowy (np. poprzez opcję 'Add as a Maven Project' klikając prawym przyciskiem na plik pom.xml).
-3. Uruchom aplikację (np. za pomocą komendy konsolowej `mvn spring-boot:run` lub klikając ikonę run w klasie `BookcaseApp`).
-4. Przeczytaj instrukcję, która wyświetli się na głównej stronie aplikacji (domyślnie ścieżka `http://localhost:8080/`).  
-5. Do przygotowanego szkieletu aplikacji dodaj odpowiednie komponenty (kontroler, endpoint, serwis).
-6. Ostateczne rozwiązanie powinno się dać skompilować, uruchomić i wyświetlić wszystkie wymagane elementy.  
-7. W razie pytań i problemów piszcie do mnie na Slacku. 
+1. Na potrzeby zadania jest już przygotowany zbiór książek (com.isa.bookcase.repository.Books).
+2. Utwórz kontroler Bookcase z endpointem /books który wyświetli wszystkie książki z repozytorium na jedynym widoku:
+* każda pozycja na liście powinna wyświetlać wszystkie dostępne informacje o danej książce.
+* format wyświetlenia danych do wyboru: zwykły tekst, prosty html, json.
+3. Dodaj kontroler RandomBook:
+* endpoint /book-for-today powinien wyświetlić losową książkę z repozytorium.
+4. Dodaj kolejny kontroler FindBook z endpointem /book/{title}/search:
+* zaimplementuj wyszukiwanie książki po zadanym w request parametrze title,
+* jeśli jako wartość parametru title została podana np. tylko litera "a", powinny się wyświetlić wszystkie książki zawierające w tytule literę "a" lub "A",
+5. Do rozwiązania możesz wykorzystać klasy z pakietu domain i repository.
+6. Twoja aplikacja powinna być zbudowana w oparciu o poznane na warsztatach mechanizmy Dependency Injection i Inversion of Control.
+## Wymagania i punktacja:
+* Aplikacja powinna być napisana obiektowo i z wykorzystaniem mechanizmów Springa - 1 pkt.
+* Prawidłowo działający endpoint /books - 1 pkt.
+* Prawidłowo działający endpoint /book-for-today - 1 pkt.
+* Prawidłowo działający endpoint /book/{title}/search - 2 pkt.
+* Maksymalną ilość punktów za zadanie (5 pkt.) można otrzymać tylko wówczas, jeśli wszystkie powyższe polecenia zostały wykonane prawidłowo.
 
 
 ## Forma oddania zadania
